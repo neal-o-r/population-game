@@ -37,11 +37,16 @@ def play_a_game(bracket):
         score = 0
         game = bracket.copy()
 
+        win = False
         i = 0
         while len(game) > 1:
                 next_round = []
                 for p in game:
                         os.system('clear')
+                        if i > 0:
+                                if win: print("Right!")
+                                else: print("Wrong!")
+
                         print(f"\nCurrent Score: {score}/{i}\n")
 
                         n, win = ask_pair(p)
@@ -57,4 +62,4 @@ if __name__ == '__main__':
                 contents = f.read().splitlines()
 
         bracket = make_bracket(make_pop_tuples(contents))
-
+        play_a_game(bracket)
