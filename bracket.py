@@ -56,6 +56,9 @@ def play_a_game(bracket):
 
                 game = make_bracket(next_round)
 
+        print(f'Final Score: {score}/{i}')
+
+
 
 if __name__ == '__main__':
         with open('pops.csv') as f:
